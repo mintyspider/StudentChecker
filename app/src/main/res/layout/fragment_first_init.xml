@@ -12,11 +12,12 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/AppName"
+            android:id="@+id/appName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="43dp"
             android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif-light"
             android:text="StudentChecker"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -39,6 +40,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="82dp"
             android:text="Здравствуйте!"
+            android:fontFamily="@font/inter"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textColor="#010149"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/LogoImg" />
@@ -50,16 +55,32 @@
             android:layout_marginTop="15dp"
             android:text="Для использования приложения\nнеобходима авторизация"
             android:textAlignment="center"
+            android:fontFamily="@font/inter_semibold"
+            android:textSize="12sp"
+            android:textColor="#010149"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/GreetH1" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
-            android:text="Вход"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonEnter"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="125dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/inter"
+            android:text="ВХОД"
+            android:textAlignment="center"
+            android:textColor="#010149"
+            android:backgroundTint="#FFFFFF"
+            android:textSize="13sp"
+            app:strokeColor="#010149"
+            app:strokeWidth="2dp"
+            app:cornerRadius="8dp"
+            app:iconGravity="textStart"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/GreetP" />
