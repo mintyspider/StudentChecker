@@ -6,84 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".FirstInitFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/fragment_horizontal_margin"
+        android:paddingTop="@dimen/fragment_vertical_margin"
+        android:paddingRight="@dimen/fragment_horizontal_margin"
+        android:paddingBottom="@dimen/fragment_vertical_margin">
 
+        <!-- App Name (сверху слева) -->
         <TextView
-            android:id="@+id/appName"
+            android:id="@+id/tvAppName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="43dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
             android:fontFamily="sans-serif-light"
             android:text="StudentChecker"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/LogoImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="67dp"
-            android:layout_marginTop="116dp"
-            android:layout_marginEnd="67dp"
-            android:src="@drawable/logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/GreetH1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="82dp"
-            android:text="Здравствуйте!"
-            android:fontFamily="@font/inter"
-            android:textAlignment="center"
-            android:textSize="24sp"
             android:textColor="#010149"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Logo (большой, строго по центру) -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/logo"
+
+            app:layout_constraintBottom_toTopOf="@+id/btnEnter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/LogoImg" />
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Приветствие (под логотипом) -->
         <TextView
-            android:id="@+id/GreetP"
+            android:id="@+id/tvGreeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/inter"
+            android:text="Здравствуйте!"
+            android:textAlignment="center"
+            android:textColor="#010149"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+
+        <!-- Описание -->
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/inter"
+            android:lineSpacingExtra="4dp"
             android:text="Для использования приложения\nнеобходима авторизация"
             android:textAlignment="center"
-            android:fontFamily="@font/inter_semibold"
-            android:textSize="12sp"
             android:textColor="#010149"
+            android:textSize="14sp"
+            android:alpha="0.7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/GreetH1" />
+            app:layout_constraintTop_toBottomOf="@+id/tvGreeting" />
 
+        <!-- Кнопка входа (внизу) -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonEnter"
-            android:layout_width="match_parent"
+            android:id="@+id/btnEnter"
+            android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="125dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="48dp"
             android:fontFamily="@font/inter"
             android:text="ВХОД"
             android:textAlignment="center"
             android:textColor="#010149"
-            android:backgroundTint="#FFFFFF"
-            android:textSize="13sp"
-            app:strokeColor="#010149"
-            app:strokeWidth="2dp"
-            app:cornerRadius="8dp"
+            android:textSize="14sp"
+            app:backgroundTint="#00000000"
+            app:cornerRadius="28dp"
+            app:icon="@drawable/baseline_login_24"
             app:iconGravity="textStart"
+            app:iconTint="#010149"
+            app:strokeColor="#010149"
+            app:strokeWidth="1.5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/GreetP" />
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Версия приложения -->
+        <TextView
+            android:id="@+id/tvVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="v1.0.0"
+            android:textColor="#010149"
+            android:textSize="12sp"
+            android:alpha="0.3"
+            app:layout_constraintBottom_toTopOf="@+id/btnEnter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

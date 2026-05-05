@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:autoMirrored="true"
+    android:height="72dp"
+    android:tint="#010149"
+    android:viewportHeight="24"
+    android:viewportWidth="24"
+    android:width="72dp">
+
+    <!-- Контур круга -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="1"
+        android:pathData="M12,1C5.93,1 1,5.93 1,12s4.93,11 11,11 11,-4.93 11,-11S18.07,1 12,1z"/>
+
+    <!-- Иконка таблицы (уменьшена с помощью scale) -->
+    <group
+        android:pivotX="12"
+        android:pivotY="12"
+        android:scaleX="0.7"
+        android:scaleY="0.7">
+
+        <path
+            android:fillColor="@android:color/white"
+            android:pathData="M5,14h4v-4H5V14zM5,19h4v-4H5V19zM5,9h4V5H5V9zM10,14h9v-4h-9V14zM10,19h9v-4h-9V19zM10,5v4h9V5H10z"/>
+
+    </group>
+
+</vector>

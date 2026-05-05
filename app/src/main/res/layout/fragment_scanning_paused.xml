@@ -9,9 +9,7 @@
     android:paddingTop="@dimen/fragment_vertical_margin"
     android:paddingRight="@dimen/fragment_horizontal_margin"
     android:paddingBottom="@dimen/fragment_vertical_margin"
-    tools:context=".ScanningFragment">
-
-    <!-- Верхняя панель -->
+    tools:context=".ScanningPausedFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
@@ -21,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/appName"
+            android:id="@+id/tvAppName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -32,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/btnNotes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="13dp"
@@ -43,15 +41,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Верхняя панель -->
+
 
     <!-- Заголовок -->
     <TextView
-        android:id="@+id/Login_H1"
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="110dp"
         android:fontFamily="@font/inter"
-        android:text="Сканирование\nактивно"
+        android:text="Сканирование\nприостановлено"
         android:textAlignment="center"
         android:textColor="#010149"
         android:textSize="24sp"
@@ -59,20 +59,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Анимированная иконка сканирования -->
+    <!-- Иконка сканирования -->
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_height="230dp"
-        android:layout_width="wrap_content"
+        android:id="@+id/ivScan"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
         android:layout_marginTop="40dp"
         android:src="@drawable/scan"
+        android:alpha="0.7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login_H1" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
     <!-- Нижняя панель с кнопками -->
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/buttonsPanel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
@@ -82,37 +83,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Левая кнопка (круговая диаграмма) - маленькая -->
+        <!-- Кнопка статистики (маленькая, слева) -->
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/btnStatistics"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
             android:backgroundTint="#00000000"
-            android:padding="10dp"
-            android:src="@drawable/baseline_pie_chart_outline_24" />
+            android:src="@drawable/baseline_square_24" />
 
-        <!-- Центральная кнопка (пауза) - большая -->
+        <!-- Кнопка возобновления (большая, по центру) -->
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/btnResume"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_gravity="center"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="#00000000"
-            android:padding="16dp"
-            android:src="@drawable/baseline_pause_circle_outline_24" />
+            android:padding="18dp"
+            android:src="@drawable/baseline_play_circle_outline_24" />
 
-        <!-- Правая кнопка (стоп/квадрат) - маленькая -->
+        <!-- Кнопка удаления (маленькая, справа) -->
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btnDelete"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
             android:backgroundTint="#00000000"
-            android:padding="10dp"
-            android:src="@drawable/baseline_square_24" />
+            android:src="@drawable/baseline_delete_outline_24" />
 
     </LinearLayout>
 

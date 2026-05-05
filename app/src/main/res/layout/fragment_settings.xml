@@ -1,14 +1,357 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="@dimen/fragment_horizontal_margin"
+    android:paddingTop="@dimen/fragment_vertical_margin"
+    android:paddingRight="@dimen/fragment_horizontal_margin"
+    android:paddingBottom="@dimen/fragment_vertical_margin"
     tools:context=".SettingsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Верхняя панель -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="sans-serif-light"
+            android:text="StudentChecker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00000000"
+            android:src="@drawable/baseline_close_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Основной контент -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Заголовок Настройки -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Настройки"
+                android:textColor="#010149"
+                android:textSize="24sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Тема оформления -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/baseline_dark_mode_24"
+                    android:tint="#010149" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:text="Темная тема"
+                    android:textColor="#010149"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchTheme"
+                    app:thumbTint="#010149"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!-- Bluetooth -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/baseline_bluetooth_24"
+                    android:tint="#010149" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:text="Bluetooth"
+                    android:textColor="#010149"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchBluetooth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:thumbTint="#010149"/>
+
+            </LinearLayout>
+
+            <!-- Назначить устройство по умолчанию -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_stat_card"
+                android:padding="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/llDefaultDevice">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/baseline_speaker_phone_24"
+                    android:tint="#010149" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:text="Назначить устройством по умолчанию"
+                    android:textColor="#010149"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter" />
+
+            </LinearLayout>
+
+            <!-- Блок для Преподавателя -->
+            <LinearLayout
+                android:id="@+id/teacherBlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Настройки сканирования"
+                    android:textColor="#010149"
+                    android:textSize="18sp" />
+
+                <!-- Поле ввода минут -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_watch_24"
+                        android:tint="#010149" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="Интервал сканирования"
+                        android:textColor="#010149"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/inter" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <EditText
+                            android:id="@+id/etScanInterval"
+                            android:layout_width="60dp"
+                            android:layout_height="48dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="10"
+                            android:textColor="#010149"
+                            android:textSize="16sp"
+                            android:background="@drawable/bg_edit_text"
+                            android:padding="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="минут"
+                            android:textColor="#010149"
+                            android:textSize="12sp"
+                            android:alpha="0.6" />
+
+                    </LinearLayout>
+
+                    <!-- Кнопка Сохранить -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSaveInterval"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="Сохранить"
+                        android:layout_marginStart="8dp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        app:backgroundTint="#010149"
+                        app:cornerRadius="8dp" />
+
+                </LinearLayout>
+
+                <!-- Сообщение об ошибке -->
+                <TextView
+                    android:id="@+id/tvIntervalError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Введенное значение должно быть от 10 до 80 минут"
+                    android:textColor="#FF0000"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+            <!-- Заголовок Профиль -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Профиль"
+                android:textColor="#010149"
+                android:textSize="18sp" />
+
+            <!-- ФИО -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ФИО"
+                    android:textColor="#010149"
+                    android:textSize="14sp"
+                    android:alpha="0.7"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvFullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:text="Паньков Владислав Олегович"
+                    android:textColor="#010149"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter" />
+
+            </LinearLayout>
+
+            <!-- Блок для Студента/Старосты -->
+            <LinearLayout
+                android:id="@+id/studentBlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Номер группы"
+                    android:textColor="#010149"
+                    android:textSize="14sp"
+                    android:alpha="0.7"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvGroupNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:text="22306"
+                    android:textColor="#010149"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter" />
+
+            </LinearLayout>
+
+            <!-- Кнопка Выйти -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/inter"
+                android:text="ВЫЙТИ"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                app:backgroundTint="#010149"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/baseline_logout_24"
+                app:iconGravity="textStart"
+                app:iconTint="#FFFFFF"
+                app:strokeWidth="0dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

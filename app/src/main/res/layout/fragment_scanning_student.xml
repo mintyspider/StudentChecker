@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/fragment_vertical_margin"
     android:paddingRight="@dimen/fragment_horizontal_margin"
     android:paddingBottom="@dimen/fragment_vertical_margin"
-    tools:context=".ScanningFragment">
+    tools:context=".ScanningStudentFragment">
 
     <!-- Верхняя панель -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/appName"
+            android:id="@+id/tvAppName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -32,7 +32,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/btnNotes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="13dp"
@@ -44,76 +44,75 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Заголовок -->
+    <!-- Статус сканирования -->
     <TextView
-        android:id="@+id/Login_H1"
+        android:id="@+id/tvScanStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/inter"
-        android:text="Сканирование\nактивно"
+        android:text="Сканирование\nнеактивно"
         android:textAlignment="center"
         android:textColor="#010149"
-        android:textSize="24sp"
+        android:textSize="26sp"
+        android:lineSpacingExtra="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Анимированная иконка сканирования -->
+    <!-- Иконка сканирования с анимацией -->
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_height="230dp"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="40dp"
+        android:id="@+id/ivScan"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="32dp"
         android:src="@drawable/scan"
+        android:alpha="0.6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login_H1" />
+        app:layout_constraintTop_toBottomOf="@+id/tvScanStatus" />
 
-    <!-- Нижняя панель с кнопками -->
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+    <!-- Плашка "Вы отсканированы!" -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardScanned"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="48dp"
+        android:visibility="visible"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#010149"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivScan">
 
-        <!-- Левая кнопка (круговая диаграмма) - маленькая -->
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:backgroundTint="#00000000"
-            android:padding="10dp"
-            android:src="@drawable/baseline_pie_chart_outline_24" />
-
-        <!-- Центральная кнопка (пауза) - большая -->
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="#00000000"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:padding="16dp"
-            android:src="@drawable/baseline_pause_circle_outline_24" />
+            android:gravity="center">
 
-        <!-- Правая кнопка (стоп/квадрат) - маленькая -->
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:backgroundTint="#00000000"
-            android:padding="10dp"
-            android:src="@drawable/baseline_square_24" />
+            <ImageView
+                android:id="@+id/iconCheck"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/outline_check_circle_24"
+                app:tint="#FFFFFF" />
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Вы отсканированы!"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_semibold" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

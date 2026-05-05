@@ -1,4 +1,4 @@
 package com.example.studentchecker
 
-class FirstInitFragment {
+class LoginFragment {
 }
