@@ -32,7 +32,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/btnNotes"
+            android:id="@+id/btnMenu"
+            android:contentDescription="Открыть меню"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="13dp"

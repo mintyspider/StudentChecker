@@ -32,7 +32,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/btnNotes"
+            android:id="@+id/btnSettings"
+            android:contentDescription="Открыть меню"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="13dp"
@@ -85,6 +86,7 @@
         <!-- Кнопка статистики -->
         <ImageButton
             android:id="@+id/btnStatistics"
+            android:contentDescription="Открыть статистику"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
@@ -95,6 +97,7 @@
         <!-- Кнопка списка -->
         <ImageButton
             android:id="@+id/btnList"
+            android:contentDescription="Открыть посещаемость"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_gravity="center"
@@ -107,6 +110,7 @@
         <!-- Кнопка удаления -->
         <ImageButton
             android:id="@+id/btnDelete"
+            android:contentDescription="Удалить сканирование"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"

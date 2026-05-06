@@ -32,7 +32,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/btnNotes"
+            android:id="@+id/btnSettings"
+            android:contentDescription="Открыть меню"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="13dp"
@@ -87,6 +88,7 @@
             android:layout_marginTop="48dp"
             android:fontFamily="@font/inter"
             android:text="ЗАПУСТИТЬ"
+            android:contentDescription="Начать сканирование"
             android:textAlignment="center"
             android:textColor="#010149"
             android:textSize="14sp"

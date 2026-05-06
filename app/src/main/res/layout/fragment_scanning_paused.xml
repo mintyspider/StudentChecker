@@ -83,18 +83,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Кнопка статистики (маленькая, слева) -->
+        <!-- Кнопка статистики -->
         <ImageButton
             android:id="@+id/btnStatistics"
+            android:contentDescription="Открыть статистику"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
             android:backgroundTint="#00000000"
-            android:src="@drawable/baseline_square_24" />
+            android:src="@drawable/baseline_pie_chart_outline_24" />
 
-        <!-- Кнопка возобновления (большая, по центру) -->
+        <!-- Кнопка возобновления -->
         <ImageButton
             android:id="@+id/btnResume"
+            android:contentDescription="Возобновить сканирование"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_gravity="center"
@@ -104,14 +106,15 @@
             android:padding="18dp"
             android:src="@drawable/baseline_play_circle_outline_24" />
 
-        <!-- Кнопка удаления (маленькая, справа) -->
+        <!-- Кнопка остановки (маленькая, справа) -->
         <ImageButton
-            android:id="@+id/btnDelete"
+            android:id="@+id/btnStop"
+            android:contentDescription="Остановить сканирование"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
             android:backgroundTint="#00000000"
-            android:src="@drawable/baseline_delete_outline_24" />
+            android:src="@drawable/baseline_square_24" />
 
     </LinearLayout>
 

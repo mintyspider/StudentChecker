@@ -34,6 +34,7 @@
 
         <ImageButton
             android:id="@+id/btnClose"
+            android:contentDescription="Закрыть меню"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00000000"
@@ -79,7 +80,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/baseline_dark_mode_24"
-                    android:tint="#010149" />
+                    app:tint="#010149" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -111,7 +112,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/baseline_bluetooth_24"
-                    android:tint="#010149" />
+                    app:tint="#010149" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -148,7 +149,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/baseline_speaker_phone_24"
-                    android:tint="#010149" />
+                    app:tint="#010149" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -192,7 +193,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@drawable/baseline_watch_24"
-                        android:tint="#010149" />
+                        app:tint="#010149" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -238,6 +239,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:text="Сохранить"
+                        android:contentDescription="Сохранить интервал сканирования"
                         android:layout_marginStart="8dp"
                         android:textColor="#FFFFFF"
                         android:textSize="14sp"
@@ -335,6 +337,7 @@
             <!-- Кнопка Выйти -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
+                android:contentDescription="Выйти"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="32dp"

@@ -30,7 +30,7 @@
         android:layout_height="80dp"
         android:layout_marginTop="48dp"
         android:src="@drawable/baseline_login_24"
-        android:tint="#010149"
+        app:tint="#010149"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appName" />
@@ -121,7 +121,7 @@
         app:layout_constraintTop_toBottomOf="@+id/TextFieldPassword">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/myButton"
+            android:id="@+id/btnEnter"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:fontFamily="@font/inter"

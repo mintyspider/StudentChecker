@@ -32,7 +32,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/menuButton"
+            android:contentDescription="Вызов меню"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="13dp"
@@ -61,7 +62,7 @@
 
     <!-- Анимированная иконка сканирования -->
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/scanImage"
         android:layout_height="230dp"
         android:layout_width="wrap_content"
         android:layout_marginTop="40dp"
@@ -82,9 +83,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Левая кнопка (круговая диаграмма) - маленькая -->
+        <!-- Левая кнопка (круговая диаграмма) -->
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/btnStats"
+            android:contentDescription="Открыть статистику"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
@@ -92,9 +94,10 @@
             android:padding="10dp"
             android:src="@drawable/baseline_pie_chart_outline_24" />
 
-        <!-- Центральная кнопка (пауза) - большая -->
+        <!-- Центральная кнопка (пауза) -->
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/btnPause"
+            android:contentDescription="Приостановить сканирование"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_gravity="center"
@@ -104,9 +107,10 @@
             android:padding="16dp"
             android:src="@drawable/baseline_pause_circle_outline_24" />
 
-        <!-- Правая кнопка (стоп/квадрат) - маленькая -->
+        <!-- Правая кнопка (стоп/квадрат) -->
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btnStop"
+            android:contentDescription="Остановить сканирование"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"

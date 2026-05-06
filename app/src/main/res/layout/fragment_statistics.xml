@@ -23,7 +23,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton1"
+            android:id="@+id/btnBack"
+            android:contentDescription="Назад"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="13dp"
@@ -42,11 +43,12 @@
             android:textSize="24sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imageButton1"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton2" />
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintEnd_toStartOf="@+id/btnSettings" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/btnSettings"
+            android:contentDescription="Открыть меню"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00000000"
