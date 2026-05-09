@@ -12,50 +12,24 @@
     tools:context=".ScanningInactiveFragment">
 
     <!-- Верхняя панель -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/appBar"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
+    <include
+        layout="@layout/toolbar_top"
+        android:id="@+id/includeToolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/tvAppName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:fontFamily="sans-serif-light"
-            android:text="StudentChecker"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btnSettings"
-            android:contentDescription="Открыть меню"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="13dp"
-            android:backgroundTint="#00000000"
-            android:src="@drawable/baseline_notes_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Заголовок -->
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="@dimen/inactive_title_margin_top"
         android:fontFamily="@font/inter"
-        android:text="Сканирование\nнеактивно"
+        android:text="@string/inactive_title"
         android:textAlignment="center"
-        android:textColor="#010149"
-        android:textSize="24sp"
+        android:textColor="@color/darkBlue"
+        android:textSize="@dimen/inactive_title_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -71,48 +45,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-        app:layout_constraintVertical_bias="0.4">
+        app:layout_constraintVertical_bias="@dimen/inactive_vertical_bias">
 
         <!-- Иконка сканирования -->
         <ImageView
             android:id="@+id/ivScan"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:contentDescription="@string/inactive_title"
+            android:layout_width="@dimen/image_small"
+            android:layout_height="@dimen/image_small"
             android:src="@drawable/scan" />
 
         <!-- Кнопка запуска -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnStart"
-            android:layout_width="200dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="48dp"
+            android:layout_width="@dimen/button_width_default"
+            android:layout_height="@dimen/button_height_default"
+            android:layout_marginTop="@dimen/inactive_button_margin_top"
             android:fontFamily="@font/inter"
-            android:text="ЗАПУСТИТЬ"
-            android:contentDescription="Начать сканирование"
+            android:text="@string/inactive_start_button_text"
+            android:contentDescription="@string/inactive_start_button_desc"
             android:textAlignment="center"
-            android:textColor="#010149"
-            android:textSize="14sp"
-            app:backgroundTint="#00000000"
-            app:cornerRadius="28dp"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/text_medium"
+            app:backgroundTint="@color/transparent"
+            app:cornerRadius="@dimen/radius_large"
+            app:icon="@drawable/baseline_play_circle_outline_24"
             app:iconGravity="textStart"
-            app:iconTint="#010149"
-            app:strokeColor="#010149"
-            app:strokeWidth="1.5dp" />
-
-        <!-- Подзаголовок (опционально) -->
-        <TextView
-            android:id="@+id/tvSubtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Нажмите кнопку, чтобы начать\nсканирование"
-            android:textColor="#010149"
-            android:textSize="14sp"
-            android:alpha="0.5"
-            android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+            app:iconSize="@dimen/icon_small"
+            app:iconTint="@color/darkBlue"
+            app:strokeColor="@color/darkBlue"
+            app:strokeWidth="@dimen/stroke_medium" />
 
     </LinearLayout>
 

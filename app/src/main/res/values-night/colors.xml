@@ -1,2 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <!-- Базовые цвета -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Основные цвета -->
+    <color name="darkBlue">#FFFFFF</color>
+    <color name="darkBlue_hint">#B0B0B0</color>
+    <color name="transparent">#00000000</color>
+    <color name="red">#FF6B6B</color>
+    <color name="grey">#404040</color>
+
+    <!-- Фоны -->
+    <color name="background">#121212</color>
+    <color name="surface">#1E1E1E</color>
+    <color name="card_background">#2D2D2D</color>
+
+    <!-- Текст -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_hint">#808080</color>
+    <color name="divider">#404040</color>
+
+    <!-- Иконки -->
+    <color name="icon_tint">#FFFFFF</color>
+</resources>

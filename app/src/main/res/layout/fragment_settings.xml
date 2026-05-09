@@ -12,61 +12,35 @@
     tools:context=".SettingsFragment">
 
     <!-- Верхняя панель -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/appBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+    <include
+        layout="@layout/toolbar_with_close"
+        android:id="@+id/includeToolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/appName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:fontFamily="sans-serif-light"
-            android:text="StudentChecker"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btnClose"
-            android:contentDescription="Закрыть меню"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#00000000"
-            android:src="@drawable/baseline_close_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Основной контент -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBar">
+        app:layout_constraintTop_toBottomOf="@+id/includeToolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="@dimen/margin_large">
 
             <!-- Заголовок Настройки -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_semibold"
-                android:text="Настройки"
-                android:textColor="#010149"
-                android:textSize="24sp"
-                android:layout_marginBottom="24dp" />
+                android:text="@string/settings_title"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/text_xlarge"
+                android:layout_marginBottom="@dimen/margin_xlarge" />
 
             <!-- Тема оформления -->
             <LinearLayout
@@ -74,29 +48,32 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="@dimen/margin_large">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:id="@+id/ivThemeIcon"
+                    android:layout_width="@dimen/icon_small"
+                    android:layout_height="@dimen/icon_small"
                     android:src="@drawable/baseline_dark_mode_24"
-                    app:tint="#010149" />
+                    android:contentDescription="@string/settings_theme_icon_desc"
+                    app:tint="@color/darkBlue" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="16dp"
-                    android:text="Темная тема"
-                    android:textColor="#010149"
-                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:text="@string/settings_dark_theme"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="@dimen/text_normal"
                     android:fontFamily="@font/inter" />
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/switchTheme"
-                    app:thumbTint="#010149"
+                    android:contentDescription="@string/change_theme"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    app:thumbTint="@color/darkBlue"/>
 
             </LinearLayout>
 
@@ -106,29 +83,31 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="@dimen/margin_large">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:id="@+id/ivBluetoothIcon"
+                    android:layout_width="@dimen/icon_small"
+                    android:layout_height="@dimen/icon_small"
                     android:src="@drawable/baseline_bluetooth_24"
-                    app:tint="#010149" />
+                    android:contentDescription="@string/settings_bluetooth_icon_desc"
+                    app:tint="@color/darkBlue" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="16dp"
-                    android:text="Bluetooth"
-                    android:textColor="#010149"
-                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:text="@string/settings_bluetooth"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="@dimen/text_normal"
                     android:fontFamily="@font/inter" />
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/switchBluetooth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:thumbTint="#010149"/>
+                    app:thumbTint="@color/darkBlue"/>
 
             </LinearLayout>
 
@@ -138,27 +117,29 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="@dimen/margin_xlarge"
                 android:background="@drawable/bg_stat_card"
-                android:padding="12dp"
+                android:padding="@dimen/margin_default"
                 android:clickable="true"
                 android:focusable="true"
                 android:id="@+id/llDefaultDevice">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:id="@+id/ivDefaultDeviceIcon"
+                    android:layout_width="@dimen/icon_small"
+                    android:layout_height="@dimen/icon_small"
                     android:src="@drawable/baseline_speaker_phone_24"
-                    app:tint="#010149" />
+                    android:contentDescription="@string/settings_default_device_icon_desc"
+                    app:tint="@color/darkBlue" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="16dp"
-                    android:text="Назначить устройством по умолчанию"
-                    android:textColor="#010149"
-                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:text="@string/settings_default_device"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="@dimen/text_normal"
                     android:fontFamily="@font/inter" />
 
             </LinearLayout>
@@ -174,12 +155,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_default"
                     android:fontFamily="@font/inter_semibold"
-                    android:text="Настройки сканирования"
-                    android:textColor="#010149"
-                    android:textSize="18sp" />
+                    android:text="@string/settings_teacher_section_title"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="@dimen/text_large" />
 
                 <!-- Поле ввода минут -->
                 <LinearLayout
@@ -187,22 +168,24 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:layout_marginBottom="8dp">
+                    android:layout_marginBottom="@dimen/margin_large">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:id="@+id/ivScanIntervalIcon"
+                        android:layout_width="@dimen/icon_small"
+                        android:layout_height="@dimen/icon_small"
                         android:src="@drawable/baseline_watch_24"
-                        app:tint="#010149" />
+                        android:contentDescription="@string/settings_scan_interval_icon_desc"
+                        app:tint="@color/darkBlue" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_marginStart="16dp"
-                        android:text="Интервал сканирования"
-                        android:textColor="#010149"
-                        android:textSize="16sp"
+                        android:layout_marginStart="@dimen/margin_large"
+                        android:text="@string/settings_scan_interval_label"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="@dimen/text_normal"
                         android:fontFamily="@font/inter" />
 
                     <LinearLayout
@@ -213,22 +196,25 @@
 
                         <EditText
                             android:id="@+id/etScanInterval"
-                            android:layout_width="60dp"
-                            android:layout_height="48dp"
+                            android:layout_width="@dimen/edittext_width_small"
+                            android:layout_height="@dimen/edittext_height"
                             android:gravity="center"
                             android:inputType="number"
-                            android:text="10"
-                            android:textColor="#010149"
-                            android:textSize="16sp"
+                            android:autofillHints="scan_interval_minutes"
+                            android:hint="@string/settings_scan_interval_hint"
+                            android:textColor="@color/darkBlue"
+                            android:backgroundTint="@color/white"
+                            android:textColorHint="@color/darkBlue"
+                            android:textSize="@dimen/text_normal"
                             android:background="@drawable/bg_edit_text"
-                            android:padding="8dp" />
+                            android:padding="@dimen/edittext_padding" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="минут"
-                            android:textColor="#010149"
-                            android:textSize="12sp"
+                            android:text="@string/settings_scan_interval_minutes"
+                            android:textColor="@color/darkBlue"
+                            android:textSize="@dimen/text_small"
                             android:alpha="0.6" />
 
                     </LinearLayout>
@@ -237,14 +223,14 @@
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnSaveInterval"
                         android:layout_width="wrap_content"
-                        android:layout_height="48dp"
-                        android:text="Сохранить"
-                        android:contentDescription="Сохранить интервал сканирования"
-                        android:layout_marginStart="8dp"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp"
-                        app:backgroundTint="#010149"
-                        app:cornerRadius="8dp" />
+                        android:layout_height="@dimen/button_height_small"
+                        android:text="@string/settings_save_button"
+                        android:contentDescription="@string/settings_save_button_desc"
+                        android:layout_marginStart="@dimen/margin_medium"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_medium"
+                        app:backgroundTint="@color/darkBlue"
+                        app:cornerRadius="@dimen/radius_small" />
 
                 </LinearLayout>
 
@@ -253,12 +239,12 @@
                     android:id="@+id/tvIntervalError"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Введенное значение должно быть от 10 до 80 минут"
-                    android:textColor="#FF0000"
-                    android:textSize="12sp"
+                    android:text="@string/settings_interval_error"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/text_small"
                     android:visibility="gone"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="4dp" />
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_small" />
 
             </LinearLayout>
 
@@ -266,39 +252,39 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginBottom="@dimen/margin_default"
                 android:fontFamily="@font/inter_semibold"
-                android:text="Профиль"
-                android:textColor="#010149"
-                android:textSize="18sp" />
+                android:text="@string/settings_profile_title"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/text_large" />
 
             <!-- ФИО -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="@dimen/margin_large">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ФИО"
-                    android:textColor="#010149"
-                    android:textSize="14sp"
+                    android:text="@string/settings_full_name_label"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="@dimen/text_medium"
                     android:alpha="0.7"
-                    android:layout_marginBottom="4dp" />
+                    android:layout_marginBottom="@dimen/margin_small" />
 
                 <TextView
                     android:id="@+id/tvFullName"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_height="@dimen/button_height_default"
                     android:gravity="center_vertical"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:text="Паньков Владислав Олегович"
-                    android:textColor="#010149"
-                    android:textSize="14sp"
+                    android:paddingStart="@dimen/margin_default"
+                    android:paddingEnd="@dimen/margin_default"
+                    android:text="@string/current_user_name"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="@dimen/text_medium"
                     android:fontFamily="@font/inter" />
 
             </LinearLayout>
@@ -314,22 +300,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Номер группы"
-                    android:textColor="#010149"
-                    android:textSize="14sp"
+                    android:text="@string/settings_group_label"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="@dimen/text_medium"
                     android:alpha="0.7"
-                    android:layout_marginBottom="4dp" />
+                    android:layout_marginBottom="@dimen/margin_small" />
 
                 <TextView
                     android:id="@+id/tvGroupNumber"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_height="@dimen/button_height_default"
                     android:gravity="center_vertical"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:text="22306"
-                    android:textColor="#010149"
-                    android:textSize="14sp"
+                    android:paddingStart="@dimen/margin_default"
+                    android:paddingEnd="@dimen/margin_default"
+                    android:text="@string/current_user_group"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="@dimen/text_medium"
                     android:fontFamily="@font/inter" />
 
             </LinearLayout>
@@ -337,21 +323,22 @@
             <!-- Кнопка Выйти -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
-                android:contentDescription="Выйти"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginTop="32dp"
+                android:contentDescription="@string/settings_logout_button_desc"
+                android:layout_width="@dimen/button_width_large"
+                android:layout_height="@dimen/button_height_default"
+                android:layout_marginTop="@dimen/margin_2xlarge"
                 android:fontFamily="@font/inter"
-                android:text="ВЫЙТИ"
+                android:text="@string/settings_logout_button"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="13sp"
-                app:backgroundTint="#010149"
-                app:cornerRadius="8dp"
+                android:backgroundTint="@color/transparent"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/text_medium"
+                app:strokeColor="@color/darkBlue"
+                app:strokeWidth="@dimen/stroke_large"
+                app:cornerRadius="@dimen/radius_small"
                 app:icon="@drawable/baseline_logout_24"
                 app:iconGravity="textStart"
-                app:iconTint="#FFFFFF"
-                app:strokeWidth="0dp" />
+                app:iconTint="@color/darkBlue" />
 
         </LinearLayout>
 

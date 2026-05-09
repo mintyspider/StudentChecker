@@ -16,41 +16,41 @@
 
         <!-- App Name -->
         <TextView
-            android:id="@+id/tvAppName"
+            android:id="@+id/appName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/margin_3xlarge"
+            android:layout_marginTop="@dimen/margin_3xlarge"
             android:fontFamily="sans-serif-light"
-            android:text="StudentChecker"
-            android:textColor="#010149"
-            android:textSize="14sp"
+            android:text="@string/appName"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/appNameSize"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Logo -->
         <ImageView
             android:id="@+id/ivLogo"
-            android:layout_width="220dp"
-            android:layout_height="220dp"
+            android:contentDescription="@string/action_sign_in"
+            android:layout_width="@dimen/logo_size"
+            android:layout_height="@dimen/logo_size"
             android:src="@drawable/logo"
-
             app:layout_constraintBottom_toTopOf="@+id/btnEnter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Приветствие (под логотипом) -->
+        <!-- Приветствие -->
         <TextView
             android:id="@+id/tvGreeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="@dimen/margin_top_greeting"
             android:fontFamily="@font/inter"
-            android:text="Здравствуйте!"
+            android:text="@string/greetingH1"
             android:textAlignment="center"
-            android:textColor="#010149"
-            android:textSize="28sp"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/text_large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
@@ -60,53 +60,38 @@
             android:id="@+id/tvDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="@dimen/margin_top_description"
             android:fontFamily="@font/inter"
-            android:lineSpacingExtra="4dp"
-            android:text="Для использования приложения\nнеобходима авторизация"
+            android:lineSpacingExtra="@dimen/description_line_spacing"
+            android:text="@string/greetingP"
             android:textAlignment="center"
-            android:textColor="#010149"
-            android:textSize="14sp"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/text_medium"
             android:alpha="0.7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvGreeting" />
 
-        <!-- Кнопка входа (внизу) -->
+        <!-- Кнопка входа (исправлена) -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEnter"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="48dp"
+            android:layout_width="@dimen/button_width_large"
+            android:layout_height="@dimen/button_height_default"
+            android:layout_marginStart="@dimen/margin_2xlarge"
+            android:layout_marginEnd="@dimen/margin_2xlarge"
+            android:layout_marginBottom="@dimen/button_margin_bottom"
             android:fontFamily="@font/inter"
-            android:text="ВХОД"
+            android:text="@string/btnGreeting"
             android:textAlignment="center"
-            android:textColor="#010149"
-            android:textSize="14sp"
-            app:backgroundTint="#00000000"
-            app:cornerRadius="28dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_medium"
+            app:backgroundTint="@color/darkBlue"
+            app:cornerRadius="@dimen/radius_large"
             app:icon="@drawable/baseline_login_24"
+            app:iconSize="@dimen/icon_small"
             app:iconGravity="textStart"
-            app:iconTint="#010149"
-            app:strokeColor="#010149"
-            app:strokeWidth="1.5dp"
+            app:iconTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <!-- Версия приложения -->
-        <TextView
-            android:id="@+id/tvVersion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="v1.0.0"
-            android:textColor="#010149"
-            android:textSize="12sp"
-            android:alpha="0.3"
-            app:layout_constraintBottom_toTopOf="@+id/btnEnter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

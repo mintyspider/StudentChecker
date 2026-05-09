@@ -16,21 +16,23 @@
         android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/margin_3xlarge"
+        android:layout_marginTop="@dimen/margin_large"
         android:fontFamily="sans-serif-light"
-        android:text="StudentChecker"
+        android:text="@string/appName"
+        android:textSize="@dimen/appNameSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Иконка входа -->
     <ImageView
         android:id="@+id/loginImg"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="48dp"
+        android:contentDescription="@string/action_sign_in_short"
+        android:layout_width="@dimen/login_icon_size"
+        android:layout_height="@dimen/login_icon_size"
+        android:layout_marginTop="@dimen/margin_top_login_icon"
         android:src="@drawable/baseline_login_24"
-        app:tint="#010149"
+        app:tint="@color/darkBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appName" />
@@ -40,11 +42,11 @@
         android:id="@+id/Login_H1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_top_login_h1"
         android:fontFamily="@font/inter"
-        android:text="Вход"
-        android:textColor="#010149"
-        android:textSize="32sp"
+        android:text="@string/LoginH1"
+        android:textColor="@color/darkBlue"
+        android:textSize="@dimen/text_3xlarge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginImg" />
@@ -54,12 +56,12 @@
         android:id="@+id/Login_P"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/margin_top_login_p"
         android:fontFamily="@font/inter_extrabold"
-        android:text="с учетной записью вычислительной\nсистемы ИМИТ (kappa)"
+        android:text="@string/loginH2"
         android:textAlignment="center"
-        android:textColor="#010149"
-        android:textSize="14sp"
+        android:textColor="@color/darkBlue"
+        android:textSize="@dimen/text_medium"
         android:alpha="0.7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,77 +71,79 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TextFieldLogin"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="@dimen/margin_2xlarge"
+        android:layout_marginEnd="@dimen/margin_2xlarge"
+        android:layout_marginTop="@dimen/margin_top_text_field_login"
+        android:labelFor="@+id/EditTextLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_max="@dimen/max_width_text_field"
         app:layout_constraintTop_toBottomOf="@+id/Login_P">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/EditTextLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Имя учетной записи"
-            android:inputType="textEmailAddress" />
+            android:autofillHints="username"
+            android:hint="@string/name"
+            android:inputType="textEmailAddress"
+            android:importantForAccessibility="yes"
+            tools:ignore="TextContrastCheck"
+            android:textColor="@color/darkBlue"
+            android:textColorHint="@color/darkBlue_hint" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Поле Пароль -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TextFieldPassword"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/margin_2xlarge"
+        android:layout_marginEnd="@dimen/margin_2xlarge"
+        android:layout_marginTop="@dimen/margin_top_text_field_password"
+        android:labelFor="@+id/EditTextPassword"
         app:endIconMode="password_toggle"
+        app:endIconTint="@color/darkBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_max="@dimen/max_width_text_field"
         app:layout_constraintTop_toBottomOf="@+id/TextFieldLogin">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/EditTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Пароль"
-            android:inputType="textPassword" />
+            android:autofillHints="password"
+            android:hint="@string/password"
+            android:importantForAccessibility="yes"
+            android:inputType="textPassword"
+            android:textColor="@color/darkBlue"
+            android:textColorHint="@color/darkBlue_hint"
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Кнопка входа с ProgressBar -->
-    <FrameLayout
-        android:id="@+id/buttonContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+    <!-- Кнопка входа -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEnter"
+        android:layout_width="@dimen/button_width_large"
+        android:layout_height="@dimen/button_height_default"
+        android:contentDescription="@string/login_button_description"
+        android:fontFamily="@font/inter"
+        android:text="@string/btnLogin"
+        android:textAlignment="center"
+        android:backgroundTint="@color/transparent"
+        android:textColor="@color/darkBlue"
+        android:textSize="@dimen/text_medium"
+        app:strokeColor="@color/darkBlue"
+        app:strokeWidth="@dimen/stroke_large"
+        app:cornerRadius="@dimen/radius_small"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextFieldPassword">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnEnter"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:fontFamily="@font/inter"
-            android:text="ВОЙТИ"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            app:backgroundTint="#010149"
-            app:cornerRadius="8dp" />
-
-        <ProgressBar
-            android:id="@+id/loginProgress"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_gravity="center"
-            android:indeterminateTint="#FFFFFF"
-            android:visibility="gone" />
-
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="@+id/TextFieldPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

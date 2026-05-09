@@ -12,236 +12,179 @@
     android:paddingBottom="@dimen/fragment_vertical_margin"
     tools:context=".StatisticsFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/appBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+    <include
+        layout="@layout/toolbar_with_back"
+        android:id="@+id/includeToolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:contentDescription="Назад"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="13dp"
-            android:backgroundTint="#00000000"
-            android:src="@drawable/outline_arrow_circle_left_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Статистика"
-            android:textColor="#010149"
-            android:textSize="24sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btnBack"
-            app:layout_constraintEnd_toStartOf="@+id/btnSettings" />
-
-        <ImageButton
-            android:id="@+id/btnSettings"
-            android:contentDescription="Открыть меню"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#00000000"
-            android:src="@drawable/baseline_notes_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBar"
-        tools:layout_editor_absoluteX="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_semibold"
-            android:text="Последнее сканирование"
-            android:textColor="#010149"
-            android:layout_marginTop="50dp"
-            android:textSize="24sp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/lastScanTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="@font/inter"
-                android:text="15"
-                android:textColor="#010149"
-                android:textSize="32sp" />
-
-            <TextView
-                android:id="@+id/lastScanText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="@font/inter"
-                android:text=" минут назад"
-                android:textColor="#010149"
-                android:textSize="32sp" />
-        </LinearLayout>
-
+        app:layout_constraintTop_toBottomOf="@+id/includeToolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:orientation="horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_large">
 
-            <!-- Пришло -->
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_stat_card"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/statistics_last_scan_title"
+                android:textColor="@color/darkBlue"
+                android:layout_marginTop="@dimen/margin_top_medium"
+                android:textSize="@dimen/text_xlarge" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_large"
+                android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/lastScanTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:alpha="0.7"
-                    android:fontFamily="@font/inter_bold"
-                    android:text="Пришло"
-                    android:textColor="#010149"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/arrivedCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter_semibold"
-                    android:text="0"
-                    android:textColor="#010149"
-                    android:textSize="36sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:alpha="0.5"
+                    android:layout_marginBottom="@dimen/margin_xlarge"
                     android:fontFamily="@font/inter"
-                    android:text="студентов"
-                    android:textColor="#010149"
-                    android:textSize="14sp" />
+                    android:text="@string/minutes_passed"
+                    android:textColor="@color/darkBlue"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:textSize="@dimen/text_3xlarge" />
+
+                <TextView
+                    android:id="@+id/lastScanText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_xlarge"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/statistics_minutes_ago"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="@dimen/text_3xlarge" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:baselineAligned="false"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_stat_card"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginBottom="@dimen/margin_xlarge"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <!-- Пришло -->
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:alpha="0.7"
-                    android:fontFamily="@font/inter_bold"
-                    android:text="Ушло"
-                    android:textColor="#010149"
-                    android:textSize="18sp" />
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_stat_card"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_large">
 
-                <TextView
-                    android:id="@+id/departedCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter_semibold"
-                    android:text="0"
-                    android:textColor="#010149"
-                    android:textSize="36sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.7"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/statistics_arrived_title"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="@dimen/text_large" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/arrivedCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="@string/students_came"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="@dimen/text_4xlarge" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/statistics_students"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="@dimen/text_medium" />
+                </LinearLayout>
+
+                <!-- Ушло -->
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:alpha="0.5"
-                    android:fontFamily="@font/inter"
-                    android:text="студентов"
-                    android:textColor="#010149"
-                    android:textSize="14sp" />
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_stat_card"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_large">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.7"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/statistics_departed_title"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="@dimen/text_large" />
+
+                    <TextView
+                        android:id="@+id/departedCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="@string/students_went"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="@dimen/text_4xlarge" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/statistics_students"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="@dimen/text_medium" />
+                </LinearLayout>
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_default"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/statistics_attendance_title"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/text_xlarge" />
+
+            <ProgressBar
+                android:id="@+id/attendanceProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/progress_height"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:progress="@string/students_percent"
+                android:progressBackgroundTint="@color/grey"
+                android:progressTint="@color/darkBlue" />
+
+            <TextView
+                android:id="@+id/attendancePercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
+                android:text="@string/students_percent"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/text_2xlarge" />
+
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            android:fontFamily="@font/inter_semibold"
-            android:text="Процент присутствующих"
-            android:textColor="#010149"
-            android:textSize="24sp" />
-
-        <!-- Шкала прогресса -->
-        <ProgressBar
-            android:id="@+id/attendanceProgress"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="8dp"
-            android:layout_marginBottom="8dp"
-            android:progress="75"
-            android:progressBackgroundTint="#E0E0E0"
-            android:progressTint="#010149" />
-
-        <TextView
-            android:id="@+id/attendancePercent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter"
-            android:text="75%"
-            android:textColor="#010149"
-            android:textSize="28sp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/myButton"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/inter"
-            android:text="СПИСОК СТУДЕНТОВ"
-            android:textAlignment="center"
-            android:textColor="#010149"
-            android:textSize="13sp"
-            app:backgroundTint="#00000000"
-            app:cornerRadius="30dp"
-            app:iconGravity="textStart"
-            app:strokeColor="#010149"
-            app:strokeWidth="2dp" />
-
-    </LinearLayout>
-
-
-
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

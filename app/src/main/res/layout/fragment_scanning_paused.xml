@@ -10,51 +10,26 @@
     android:paddingRight="@dimen/fragment_horizontal_margin"
     android:paddingBottom="@dimen/fragment_vertical_margin"
     tools:context=".ScanningPausedFragment">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/appBar"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
+
+    <!-- Верхняя панель -->
+    <include
+        layout="@layout/toolbar_top"
+        android:id="@+id/includeToolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/tvAppName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:fontFamily="sans-serif-light"
-            android:text="StudentChecker"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btnNotes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="13dp"
-            android:backgroundTint="#00000000"
-            android:src="@drawable/baseline_notes_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <!-- Верхняя панель -->
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Заголовок -->
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="@dimen/paused_title_margin_top"
         android:fontFamily="@font/inter"
-        android:text="Сканирование\nприостановлено"
+        android:text="@string/paused_title"
         android:textAlignment="center"
-        android:textColor="#010149"
-        android:textSize="24sp"
+        android:textColor="@color/darkBlue"
+        android:textSize="@dimen/text_xlarge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -62,11 +37,12 @@
     <!-- Иконка сканирования -->
     <ImageView
         android:id="@+id/ivScan"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="@dimen/image_medium"
+        android:layout_height="@dimen/image_medium"
+        android:layout_marginTop="@dimen/paused_image_margin_top"
+        android:contentDescription="@string/paused_title"
         android:src="@drawable/scan"
-        android:alpha="0.7"
+        app:layout_constraintBottom_toTopOf="@+id/buttonsPanel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
@@ -76,7 +52,7 @@
         android:id="@+id/buttonsPanel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="@dimen/paused_bottom_panel_margin_bottom"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,34 +62,36 @@
         <!-- Кнопка статистики -->
         <ImageButton
             android:id="@+id/btnStatistics"
-            android:contentDescription="Открыть статистику"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:contentDescription="@string/paused_stats_button_desc"
+            android:layout_width="@dimen/icon_large"
+            android:layout_height="@dimen/icon_large"
             android:layout_gravity="center"
-            android:backgroundTint="#00000000"
+            android:backgroundTint="@color/transparent"
+            android:padding="@dimen/paused_stats_button_padding"
             android:src="@drawable/baseline_pie_chart_outline_24" />
 
         <!-- Кнопка возобновления -->
         <ImageButton
             android:id="@+id/btnResume"
-            android:contentDescription="Возобновить сканирование"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
+            android:contentDescription="@string/paused_resume_button_desc"
+            android:layout_width="@dimen/icon_xlarge"
+            android:layout_height="@dimen/icon_xlarge"
             android:layout_gravity="center"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="#00000000"
-            android:padding="18dp"
+            android:layout_marginStart="@dimen/paused_resume_button_margin_horizontal"
+            android:layout_marginEnd="@dimen/paused_resume_button_margin_horizontal"
+            android:backgroundTint="@color/transparent"
+            android:padding="@dimen/margin_large"
             android:src="@drawable/baseline_play_circle_outline_24" />
 
-        <!-- Кнопка остановки (маленькая, справа) -->
+        <!-- Кнопка остановки -->
         <ImageButton
             android:id="@+id/btnStop"
-            android:contentDescription="Остановить сканирование"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:contentDescription="@string/paused_stop_button_desc"
+            android:layout_width="@dimen/icon_large"
+            android:layout_height="@dimen/icon_large"
             android:layout_gravity="center"
-            android:backgroundTint="#00000000"
+            android:backgroundTint="@color/transparent"
+            android:padding="@dimen/paused_stop_button_padding"
             android:src="@drawable/baseline_square_24" />
 
     </LinearLayout>
