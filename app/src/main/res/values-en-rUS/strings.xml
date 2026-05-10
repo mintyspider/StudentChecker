@@ -1,105 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="appName">StudentChecker</string>
-    <string name="greetingH1">Здравствуйте!</string>
-    <string name="greetingP">Для использования приложения\nнеобходима авторизация</string>
-    <string name="btnGreeting">ВХОД</string>
+    <string name="greetingH1">Hello!</string>
+    <string name="greetingP">Authorization is required to use the application</string>
+    <string name="btnGreeting">LOGIN</string>
 
-    <!-- Строки для LoginFragment -->
-    <string name="LoginH1">Вход</string>
-    <string name="btnLogin">ВОЙТИ</string>
-    <string name="password">Пароль</string>
-    <string name="name">Имя учетной записи</string>
-    <string name="loginH2">с учетной записью вычислительной\nсистемы ИМИТ (kappa)</string>
+    <!-- Strings for LoginFragment -->
+    <string name="LoginH1">Login</string>
+    <string name="btnLogin">LOGIN</string>
+    <string name="password">Password</string>
+    <string name="name">Account Name</string>
+    <string name="loginH2">with an IMIT (kappa) computing system account</string>
 
-    <!-- Строки для ScanningFragment -->
-    <string name="scanning_title">Сканирование\nактивно</string>
-    <string name="scanning_menu_button_desc">Вызов меню</string>
-    <string name="scanning_stats_button_desc">Открыть статистику</string>
-    <string name="scanning_pause_button_desc">Приостановить сканирование</string>
-    <string name="scanning_stop_button_desc">Остановить сканирование</string>
+    <!-- Strings for ScanningFragment -->
+    <string name="scanning_title">Scanning is active</string>
+    <string name="scanning_menu_button_desc">Call menu</string>
+    <string name="scanning_stats_button_desc">Open statistics</string>
+    <string name="scanning_pause_button_desc">Pause scanning</string>
+    <string name="scanning_stop_button_desc">Stop scanning</string>
 
-    <!-- Строки для ScanningFinishedFragment -->
-    <string name="finished_title">Сканирование\nзавершено</string>
-    <string name="finished_menu_button_desc">Открыть меню</string>
-    <string name="finished_stats_button_desc">Открыть статистику</string>
-    <string name="finished_list_button_desc">Открыть посещаемость</string>
-    <string name="finished_delete_button_desc">Удалить сканирование</string>
+    <!-- Strings for ScanningFinishedFragment -->
+    <string name="finished_title">Scanning is complete</string>
+    <string name="finished_menu_button_desc">Open menu</string>
+    <string name="finished_close_button_desc">Close scanning</string>
+    <string name="finished_stats_button_desc">Open statistics</string>
+    <string name="finished_delete_button_desc">Delete scanning</string>
 
-    <!-- Строки для ScanningInactiveFragment -->
-    <string name="inactive_title">Сканирование\nнеактивно</string>
-    <string name="inactive_menu_button_desc">Открыть меню</string>
-    <string name="inactive_start_button_text">ЗАПУСТИТЬ</string>
-    <string name="inactive_start_button_desc">Начать сканирование</string>
-    <string name="inactive_subtitle">Нажмите кнопку, чтобы начать\nсканирование</string>
+    <!-- Strings for ScanningInactiveFragment -->
+    <string name="inactive_title">Scanning is inactive</string>
+    <string name="inactive_menu_button_desc">Open menu</string>
+    <string name="inactive_start_button_text">START</string>
+    <string name="inactive_start_button_desc">Start scanning</string>
+    <string name="inactive_subtitle">Click the button to start scanning</string>
 
-    <!-- Строки для ScanningPausedFragment -->
-    <string name="paused_title">Сканирование\nприостановлено</string>
-    <string name="paused_menu_button_desc">Открыть меню</string>
-    <string name="paused_stats_button_desc">Открыть статистику</string>
-    <string name="paused_resume_button_desc">Возобновить сканирование</string>
-    <string name="paused_stop_button_desc">Остановить сканирование</string>
+    <!-- Strings for ScanningPausedFragment -->
+    <string name="paused_title">Scanning is paused</string>
+    <string name="paused_menu_button_desc">Open menu</string>
+    <string name="paused_stats_button_desc">Open statistics</string>
+    <string name="paused_resume_button_desc">Resume scanning</string>
+    <string name="paused_stop_button_desc">Stop scanning</string>
 
-    <!-- Строки для ScanningStudentFragment -->
-    <string name="student_menu_button_desc">Открыть меню</string>
-    <string name="student_scan_status_inactive">Сканирование\nнеактивно</string>
-    <string name="student_scan_status_active">Сканирование\nактивно</string>
-    <string name="student_scanned_message">Вы отсканированы!</string>
+    <!-- Strings for ScanningStudentFragment -->
+    <string name="student_menu_button_desc">Open menu</string>
+    <string name="student_scan_status_inactive">Scanning inactive</string>
+    <string name="student_scan_status_active">Scanning active</string>
+    <string name="student_scanned_message">You have been scanned!</string>
 
-    <!-- Строки для SettingsFragment -->
-    <string name="settings_close_button_desc">Закрыть меню</string>
-    <string name="settings_title">Настройки</string>
-    <string name="settings_dark_theme">Темная тема</string>
+    <!-- Strings for SettingsFragment -->
+    <string name="settings_close_button_desc">Close menu</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_dark_theme">Dark theme</string>
     <string name="settings_bluetooth">Bluetooth</string>
-    <string name="settings_default_device">Назначить устройством по умолчанию</string>
-    <string name="settings_teacher_section_title">Настройки сканирования</string>
-    <string name="settings_scan_interval_label">Интервал сканирования</string>
-    <string name="settings_scan_interval_minutes">минут</string>
-    <string name="settings_save_button">Сохранить</string>
-    <string name="settings_save_button_desc">Сохранить интервал сканирования</string>
-    <string name="settings_interval_error">Введенное значение должно быть от 10 до 80 минут</string>
-    <string name="settings_profile_title">Профиль</string>
-    <string name="settings_full_name_label">ФИО</string>
-    <string name="settings_group_label">Номер группы</string>
-    <string name="current_user_name">Паньков Владислав Олегович</string>
+    <string name="settings_default_device">Set as default device</string>
+    <string name="settings_teacher_section_title">Scan settings</string>
+    <string name="settings_scan_interval_label">Scan interval</string>
+    <string name="settings_scan_interval_minutes">minutes</string>
+    <string name="settings_save_button">Save</string>
+    <string name="settings_save_button_desc">Save scan interval</string>
+    <string name="settings_interval_error">The entered value must be between 10 and 80 minutes.</string>
+    <string name="settings_profile_title">Profile</string>
+    <string name="settings_full_name_label">Full Name</string>
+    <string name="settings_group_label">Group Number</string>
+    <string name="current_user_name">Vladislav Olegovich Pankov</string>
     <string name="current_user_group">22306</string>
-    <string name="settings_logout_button">ВЫЙТИ</string>
-    <string name="settings_logout_button_desc">Выйти из аккаунта</string>
+    <string name="settings_logout_button">LOG OUT</string>
+    <string name="settings_logout_button_desc">Log out of account</string>
 
-    <!-- Строки для StatisticsFragment -->
-    <string name="statistics_back_button_desc">Назад</string>
-    <string name="statistics_title">Статистика</string>
-    <string name="statistics_menu_button_desc">Открыть меню</string>
-    <string name="statistics_last_scan_title">Последнее сканирование</string>
-    <string name="statistics_minutes_ago"> минут назад</string>
-    <string name="statistics_short_minutes_ago">мин назад</string>
-    <string name="statistics_arrived_title">Пришло</string>
-    <string name="statistics_departed_title">Ушло</string>
-    <string name="statistics_students">студентов</string>
-    <string name="statistics_attendance_title">Процент присутствующих</string>
-    <string name="statistics_students_list_button">СПИСОК СТУДЕНТОВ</string>
-    <string name="statistics_students_list_button_desc">Открыть список студентов</string>
+    <!-- Strings for StatisticsFragment -->
+    <string name="statistics_back_button_desc">Back</string>
+    <string name="statistics_title">Statistics</string>
+    <string name="statistics_menu_button_desc">Open menu</string>
+    <string name="statistics_last_scan_title">Last scan</string>
+    <string name="statistics_minutes_ago">minutes ago</string>
+    <string name="statistics_short_minutes_ago">minutes ago</string>
+    <string name="statistics_arrived_title">Arrived</string>
+    <string name="statistics_departed_title">Departed</string>
+    <string name="statistics_students">students</string>
+    <string name="statistics_attendance_title">Percentage present</string>
+    <string name="statistics_students_list_button">STUDENT LIST</string>
+    <string name="statistics_students_list_button_desc">Open student list</string>
 
     <!-- Accessibility descriptions -->
-    <string name="action_sign_in">Стартовый экран</string>
-    <string name="action_sign_in_short">Экран входа</string>
-    <string name="name_field_description">Поле ввода имени пользователя или email</string>
-    <string name="password_field_description">Поле ввода пароля</string>
-    <string name="login_button_description">Кнопка входа в приложение</string>
-    <string name="settings_theme_icon_desc">Иконка темной темы</string>
-    <string name="settings_bluetooth_icon_desc">Иконка Bluetooth</string>
-    <string name="settings_default_device_icon_desc">Иконка устройства по умолчанию</string>
-    <string name="settings_scan_interval_icon_desc">Иконка интервала сканирования</string>
+    <string name="action_sign_in">Start screen</string>
+    <string name="action_sign_in_short">Login screen</string>
+    <string name="name_field_description">Username or email input field</string>
+    <string name="password_field_description">Password entry field</string>
+    <string name="login_button_description">Login button</string>
+    <string name="settings_theme_icon_desc">Dark theme icon</string>
+    <string name="settings_bluetooth_icon_desc">Bluetooth icon</string>
+    <string name="settings_default_device_icon_desc">Default device icon</string>
+    <string name="settings_scan_interval_icon_desc">Scan interval icon</string>
     <string name="settings_scan_interval_hint">10</string>
     <string name="minutes_passed">15</string>
     <string name="students_came">0</string>
     <string name="students_went">0</string>
     <string name="students_percent">75</string>
 
-    <!-- Общие строки для toolbar -->
-    <string name="toolbar_menu_desc">Открыть меню</string>
-    <string name="toolbar_back_desc">Назад</string>
-    <string name="toolbar_close_desc">Закрыть</string>
-    <string name="change_theme">Сменить тему</string>
+    <!-- Common strings for toolbar -->
+    <string name="toolbar_menu_desc">Open menu</string>
+    <string name="toolbar_back_desc">Back</string>
+    <string name="toolbar_close_desc">Close</string>
+    <string name="change_theme">Change theme</string>
 
 </resources>

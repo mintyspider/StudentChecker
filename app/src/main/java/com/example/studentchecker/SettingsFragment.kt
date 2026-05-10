@@ -6,54 +6,86 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
- * A simple [Fragment] subclass.
- * Use the [SettingsFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * Тут настройки. У препода не должно быть группы, у студента не должно быть интервалов сканирования
  */
 class SettingsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+// TODO: настройки темы (@+id/switchTheme)
+    /** TODO:
+     *  При переключении @+id/switchTheme:
+     *    - Вкл: установить темную тему для всего приложения
+     *    - Выкл: установить светлую тему
+     *    - Сохранить выбор в SharedPreferences
+     *    - Применить тему без перезапуска Activity
+     *  При загрузке фрагмента:
+     *    - Восстановить сохраненное состояние переключателя
+     *    - Применить соответствующую тему
+     */
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false)
-    }
+// TODO: управление Bluetooth (@+id/switchBluetooth)
+    /** TODO:
+     *  @+id/switchBluetooth - это НЕ системный Bluetooth, а флаг приложения
+     *  При переключении:
+     *    - Вкл: разрешить использование Bluetooth в логике приложения
+     *    - Выкл: запретить использование Bluetooth
+     *    - Сохранить состояние в SharedPreferences
+     *  При загрузке фрагмента:
+     *    - Восстановить сохраненное состояние переключателя
+     */
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SettingsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SettingsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+// TODO: выбор устройства по умолчанию (@+id/llDefaultDevice)
+    /** TODO:
+     *  При клике на @+id/llDefaultDevice:
+     *    - Сохранить MAC-адрес и имя устройства в SharedPreferences
+     *    - Деактивировать кнопку на день
+     *  Если это устройство не выбрано по умолчанию:
+     *    - При попытке использовать Bluetooth показать предупреждение
+     */
+
+// TODO: блок преподавателя (@+id/teacherBlock)
+    /** TODO:
+     *  Видимость @+id/teacherBlock:
+     *    - Показывать только если роль текущего пользователя = "преподаватель"
+     *    - Скрывать для студента/старосты
+     *    - Проверять роль при загрузке фрагмента и после логина
+     */
+
+// TODO: интервал сканирования (@+id/etScanInterval + @+id/btnSaveInterval)
+    /** TODO:
+     *  @+id/etScanInterval:
+     *    - Только целые положительные числа
+     *    - Не вызывать клавиатуру автоматически
+     *  При клике на @+id/btnSaveInterval:
+     *    - Валидация: не пустое, число от 10 до 80
+     *    - При ошибке: показать @+id/tvIntervalError с текстом ошибки
+     *    - При успехе: сохранить значение, скрыть ошибку, показать тост "Интервал сохранён"
+     *  При загрузке фрагмента:
+     *    - Загрузить сохраненное значение в @+id/etScanInterval
+     */
+
+// TODO: отображение профиля (@+id/tvFullName, @+id/studentBlock, @+id/tvGroupNumber)
+    /** TODO:
+     *  @+id/tvFullName:
+     *    - Отобразить ФИО текущего пользователя (только чтение)
+     *  @+id/studentBlock:
+     *    - Показывать только для ролей "студент" или "староста"
+     *    - Скрывать для преподавателя
+     *  @+id/tvGroupNumber:
+     *    - Отобразить номер группы текущего пользователя только для чтения
+     *    - Активно только когда виден @+id/studentBlock
+     */
+
+// TODO: кнопка выхода (@+id/btnLogout)
+    /** TODO:
+     *  При клике на @+id/btnLogout:
+     *    - Показать диалог: "Вы уверены, что хотите выйти?"
+     *    - При подтверждении:
+     *      - Очистить данные текущего пользователя
+     *      - Очистить чувствительные настройки
+     *      - Сохранить тему
+     *      - Перейти на экран авторизации
+     *      - Закрыть текущий фрагмент
+     */
 }

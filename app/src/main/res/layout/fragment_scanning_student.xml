@@ -35,7 +35,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Иконка сканирования с анимацией -->
+    <!-- Иконка сканирования -->
     <ImageView
         android:id="@+id/ivScan"
         android:contentDescription="@string/student_scan_status_inactive"

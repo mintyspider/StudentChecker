@@ -72,7 +72,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvGreeting" />
 
-        <!-- Кнопка входа (исправлена) -->
+        <!-- Кнопка входа -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEnter"
             android:layout_width="@dimen/button_width_large"

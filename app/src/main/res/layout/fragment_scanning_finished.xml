@@ -60,8 +60,8 @@
 
         <!-- Кнопка закрыть -->
         <ImageButton
-            android:id="@+id/btnStatistics"
-            android:contentDescription="@string/finished_stats_button_desc"
+            android:id="@+id/btnCloseScanning"
+            android:contentDescription="@string/finished_close_button_desc"
             android:layout_width="@dimen/icon_large"
             android:layout_height="@dimen/icon_large"
             android:layout_gravity="center"
@@ -71,8 +71,8 @@
 
         <!-- Кнопка статистики -->
         <ImageButton
-            android:id="@+id/btnList"
-            android:contentDescription="@string/finished_list_button_desc"
+            android:id="@+id/btnResultScanning"
+            android:contentDescription="@string/finished_stats_button_desc"
             android:layout_width="@dimen/icon_2xlarge"
             android:layout_height="@dimen/icon_2xlarge"
             android:layout_gravity="center"
@@ -84,7 +84,7 @@
 
         <!-- Кнопка удаления -->
         <ImageButton
-            android:id="@+id/btnDelete"
+            android:id="@+id/btnDeleteScanning"
             android:contentDescription="@string/finished_delete_button_desc"
             android:layout_width="@dimen/icon_large"
             android:layout_height="@dimen/icon_large"

@@ -85,7 +85,7 @@
 
         <!-- Кнопка остановки -->
         <ImageButton
-            android:id="@+id/btnStop"
+            android:id="@+id/btnEnd"
             android:contentDescription="@string/paused_stop_button_desc"
             android:layout_width="@dimen/icon_large"
             android:layout_height="@dimen/icon_large"

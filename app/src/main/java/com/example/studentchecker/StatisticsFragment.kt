@@ -6,54 +6,41 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
- * A simple [Fragment] subclass.
- * Use the [StatisticsFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * Тут статистика. Показывать только преподам и только при нажатии на кнопку экрана сканирования
  */
 class StatisticsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+// TODO: статистика посещаемости (@+id/lastScanTime, @+id/lastScanText, @+id/arrivedCount, @+id/departedCount, @+id/attendanceProgress, @+id/attendancePercent)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_statistics, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment StatisticsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            StatisticsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+    /** TODO:
+     *  При загрузке @+id/StatisticsFragment:
+     *    - Загрузить данные текущего сканирования
+     *    - Если данных нет: показать "0" везде
+     *
+     *  @+id/lastScanTime и @+id/lastScanText:
+     *    - Вычислить разницу между текущим временем и временем последнего сканирования
+     *    - Формат: "число минут назад"
+     *    - Обновлять каждые 5 минут
+     *
+     *  @+id/arrivedCount:
+     *    - Отобразить количество студентов, которые ПРИШЛИ на пару
+     *    - Данные из результатов последнего сканирования
+     *
+     *  @+id/departedCount:
+     *    - Отобразить количество студентов, которые УШЛИ с пары (не отмечались или ушли раньше)
+     *    - Формула: arrivedCount в начале - arrivedCount сейчас
+     *
+     *  @+id/attendanceProgress:
+     *    - Прогресс = (arrivedCount / общее количество студентов) * 100
+     *    - Установить прогресс в процентах
+     *    - Если arrivedCount = 0, прогресс = 0
+     *    - Если arrivedCount = общее количество студентов, прогресс = 100
+     *
+     *  @+id/attendancePercent:
+     *    - Отобразить процент посещаемости: "число"
+     *    - Округлить до целого числа
+     *
+     *  При нажатии на кнопку "Назад" (@+id/toolbar_with_back):
+     *    - Закрыть фрагмент и вернуться на предыдущий экран
+     */
 }

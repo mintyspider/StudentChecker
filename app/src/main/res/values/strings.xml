@@ -13,7 +13,7 @@
 
     <!-- Строки для ScanningFragment -->
     <string name="scanning_title">Сканирование\nактивно</string>
-    <string name="scanning_menu_button_desc">Вызов меню</string>
+    <string name="scanning_menu_button_desc">Открыть меню</string>
     <string name="scanning_stats_button_desc">Открыть статистику</string>
     <string name="scanning_pause_button_desc">Приостановить сканирование</string>
     <string name="scanning_stop_button_desc">Остановить сканирование</string>
@@ -21,8 +21,8 @@
     <!-- Строки для ScanningFinishedFragment -->
     <string name="finished_title">Сканирование\nзавершено</string>
     <string name="finished_menu_button_desc">Открыть меню</string>
+    <string name="finished_close_button_desc">Закрыть сканирование</string>
     <string name="finished_stats_button_desc">Открыть статистику</string>
-    <string name="finished_list_button_desc">Открыть посещаемость</string>
     <string name="finished_delete_button_desc">Удалить сканирование</string>
 
     <!-- Строки для ScanningInactiveFragment -->
