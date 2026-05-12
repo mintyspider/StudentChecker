@@ -61,6 +61,7 @@
     <string name="settings_profile_title">Profile</string>
     <string name="settings_full_name_label">Full Name</string>
     <string name="settings_group_label">Group Number</string>
+    <string name="scan_interval">10</string>
     <string name="current_user_name">Vladislav Olegovich Pankov</string>
     <string name="current_user_group">22306</string>
     <string name="settings_logout_button">LOG OUT</string>
