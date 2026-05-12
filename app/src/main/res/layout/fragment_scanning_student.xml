@@ -61,31 +61,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivScan">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvScannedMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="@dimen/card_padding">
-
-            <ImageView
-                android:layout_width="@dimen/icon_small"
-                android:layout_height="@dimen/icon_small"
-                android:src="@drawable/outline_check_circle_24"
-                app:tint="@color/darkBlue"
-                android:contentDescription="@string/student_scanned_message" />
-
-            <TextView
-                android:id="@+id/tvScannedMessage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_default"
-                android:fontFamily="@font/inter_semibold"
-                android:text="@string/student_scanned_message"
-                android:textColor="@color/darkBlue"
-                android:textSize="@dimen/text_normal" />
-
-        </LinearLayout>
+            android:layout_marginHorizontal="@dimen/margin_default"
+            android:layout_marginVertical="@dimen/margin_small"
+            android:drawablePadding="@dimen/settings_profile_value_padding_horizontal"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="center_vertical"
+            android:padding="@dimen/card_padding"
+            android:text="@string/student_scanned_message"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/text_normal"
+            app:drawableStartCompat="@drawable/outline_check_circle_24"
+            app:drawableTint="@color/darkBlue" />
 
     </com.google.android.material.card.MaterialCardView>
 

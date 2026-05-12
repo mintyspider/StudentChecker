@@ -68,12 +68,12 @@
                     android:textSize="@dimen/text_normal"
                     android:fontFamily="@font/inter" />
 
-                <androidx.appcompat.widget.SwitchCompat
+                <com.google.android.material.switchmaterial.SwitchMaterial
                     android:id="@+id/switchTheme"
-                    android:contentDescription="@string/change_theme"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:thumbTint="@color/darkBlue"/>
+                    android:contentDescription="@string/change_theme"
+                    app:thumbTint="@color/darkBlue" />
 
             </LinearLayout>
 
@@ -103,8 +103,9 @@
                     android:textSize="@dimen/text_normal"
                     android:fontFamily="@font/inter" />
 
-                <androidx.appcompat.widget.SwitchCompat
+                <com.google.android.material.switchmaterial.SwitchMaterial
                     android:id="@+id/switchBluetooth"
+                    android:contentDescription="@string/settings_bluetooth_desc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:thumbTint="@color/darkBlue"/>
@@ -150,7 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -203,7 +204,7 @@
                             android:autofillHints="scan_interval_minutes"
                             android:hint="@string/settings_scan_interval_hint"
                             android:textColor="@color/darkBlue"
-                            android:backgroundTint="@color/white"
+                            android:backgroundTint="@color/transparent"
                             android:textColorHint="@color/darkBlue"
                             android:textSize="@dimen/text_normal"
                             android:background="@drawable/bg_edit_text"
@@ -222,14 +223,19 @@
                     <!-- Кнопка Сохранить -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnSaveInterval"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:elevation="0dp"
+                        app:elevation="0dp"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/button_height_small"
                         android:text="@string/settings_save_button"
                         android:contentDescription="@string/settings_save_button_desc"
                         android:layout_marginStart="@dimen/margin_medium"
-                        android:textColor="@color/white"
+                        android:textColor="@color/darkBlue"
                         android:textSize="@dimen/text_medium"
-                        app:backgroundTint="@color/darkBlue"
+                        app:backgroundTint="@color/transparent"
+                        app:strokeWidth="@dimen/stroke_medium"
+                        app:strokeColor="@color/darkBlue"
                         app:cornerRadius="@dimen/radius_small" />
 
                 </LinearLayout>
@@ -282,7 +288,7 @@
                     android:gravity="center_vertical"
                     android:paddingStart="@dimen/margin_default"
                     android:paddingEnd="@dimen/margin_default"
-                    android:text="@string/current_user_name"
+                    tools:text="@string/current_user_name"
                     android:textColor="@color/darkBlue"
                     android:textSize="@dimen/text_medium"
                     android:fontFamily="@font/inter" />
@@ -313,7 +319,7 @@
                     android:gravity="center_vertical"
                     android:paddingStart="@dimen/margin_default"
                     android:paddingEnd="@dimen/margin_default"
-                    android:text="@string/current_user_group"
+                    tools:text="@string/current_user_group"
                     android:textColor="@color/darkBlue"
                     android:textSize="@dimen/text_medium"
                     android:fontFamily="@font/inter" />
@@ -323,6 +329,7 @@
             <!-- Кнопка Выйти -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:contentDescription="@string/settings_logout_button_desc"
                 android:layout_width="@dimen/button_width_large"
                 android:layout_height="@dimen/button_height_default"

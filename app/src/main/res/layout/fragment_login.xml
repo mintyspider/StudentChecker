@@ -129,6 +129,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="@dimen/button_width_large"
         android:layout_height="@dimen/button_height_default"
         android:contentDescription="@string/login_button_description"

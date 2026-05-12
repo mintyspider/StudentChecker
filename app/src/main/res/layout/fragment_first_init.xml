@@ -75,6 +75,7 @@
         <!-- Кнопка входа -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEnter"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="@dimen/button_width_large"
             android:layout_height="@dimen/button_height_default"
             android:layout_marginStart="@dimen/margin_2xlarge"
@@ -83,14 +84,16 @@
             android:fontFamily="@font/inter"
             android:text="@string/btnGreeting"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/darkBlue"
             android:textSize="@dimen/text_medium"
-            app:backgroundTint="@color/darkBlue"
+            android:backgroundTint="@color/transparent"
             app:cornerRadius="@dimen/radius_large"
             app:icon="@drawable/baseline_login_24"
             app:iconSize="@dimen/icon_small"
             app:iconGravity="textStart"
-            app:iconTint="@color/white"
+            app:iconTint="@color/darkBlue"
+            app:strokeColor="@color/darkBlue"
+            app:strokeWidth="@dimen/stroke_medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

@@ -72,7 +72,7 @@
     <!-- ==================== КОМПОНЕНТЫ ==================== -->
 
     <!-- Toolbar / AppBar -->
-    <dimen name="toolbar_margin_top">16dp</dimen>
+    <dimen name="toolbar_margin_top">24dp</dimen>
     <dimen name="toolbar_app_name_margin_start">40dp</dimen>
     <dimen name="toolbar_back_button_margin_start">13dp</dimen>
     <dimen name="toolbar_menu_button_margin_end">13dp</dimen>

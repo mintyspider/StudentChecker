@@ -58,6 +58,7 @@
         <!-- Кнопка запуска -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnStart"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="@dimen/button_width_default"
             android:layout_height="@dimen/button_height_default"
             android:layout_marginTop="@dimen/inactive_button_margin_top"

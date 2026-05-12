@@ -52,7 +52,7 @@
     <string name="settings_bluetooth">Bluetooth</string>
     <string name="settings_default_device">Назначить устройством по умолчанию</string>
     <string name="settings_teacher_section_title">Настройки сканирования</string>
-    <string name="settings_scan_interval_label">Интервал сканирования</string>
+    <string name="settings_scan_interval_label">Интервал</string>
     <string name="settings_scan_interval_minutes">минут</string>
     <string name="settings_save_button">Сохранить</string>
     <string name="settings_save_button_desc">Сохранить интервал сканирования</string>
@@ -102,5 +102,6 @@
     <string name="toolbar_back_desc">Назад</string>
     <string name="toolbar_close_desc">Закрыть</string>
     <string name="change_theme">Сменить тему</string>
+    <string name="settings_bluetooth_desc">Вруби блютуф</string>
 
 </resources>

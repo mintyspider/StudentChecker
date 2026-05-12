@@ -53,7 +53,7 @@
     <string name="settings_bluetooth">Bluetooth</string>
     <string name="settings_default_device">Set as default device</string>
     <string name="settings_teacher_section_title">Scan settings</string>
-    <string name="settings_scan_interval_label">Scan interval</string>
+    <string name="settings_scan_interval_label">Interval</string>
     <string name="settings_scan_interval_minutes">minutes</string>
     <string name="settings_save_button">Save</string>
     <string name="settings_save_button_desc">Save scan interval</string>
@@ -101,5 +101,6 @@
     <string name="toolbar_back_desc">Back</string>
     <string name="toolbar_close_desc">Close</string>
     <string name="change_theme">Change theme</string>
+    <string name="settings_bluetooth_desc">Вруби блютуф</string>
 
 </resources>
