@@ -17,8 +17,8 @@
     <color name="card_background">#2D2D2D</color>    <!-- карточки заметно выделяются -->
 
     <!-- Текст -->
-    <color name="text_primary">#FFFFFF</color>       <!-- белый, максимальный контраст -->
-    <color name="text_secondary">#B0B0B0</color>     <!-- светлый серый -->
+    <color name="text_primary">#F5F7FA</color>       <!-- белый, максимальный контраст -->
+    <color name="text_secondary">#5AA2F5</color>     <!-- светлый серый -->
     <color name="text_hint">#757575</color>          <!-- средне-серый -->
     <color name="divider">#404040</color>            <!-- темный разделитель -->
 

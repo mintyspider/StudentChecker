@@ -47,6 +47,140 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvScanStatus" />
 
+    <!-- Плашка Текущее занятие -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardLesson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xlarge"
+        android:layout_marginEnd="@dimen/margin_xlarge"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        app:cardCornerRadius="@dimen/radius_medium"
+        app:cardBackgroundColor="@color/card_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivScan">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/card_padding">
+
+            <!-- Название предмета (Заголовок) -->
+            <TextView
+                android:id="@+id/tvLessonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_extrabold"
+                android:text="Программирование на Android"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/text_large"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <!-- Разделитель -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:layout_marginBottom="@dimen/margin_default" />
+
+            <!-- Строка времени занятия -->
+            <TextView
+                android:id="@+id/tvLessonTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/settings_profile_value_padding_horizontal"
+                android:fontFamily="@font/inter_bold"
+                android:text="10:30 – 12:05"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/text_normal"
+                app:drawableStartCompat="@drawable/baseline_schedule_24"
+                app:drawableTint="@color/darkBlue"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <!-- Строка типа занятия -->
+            <TextView
+                android:id="@+id/tvLessonType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/settings_profile_value_padding_horizontal"
+                android:fontFamily="@font/inter"
+                android:text="Лекция"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/text_normal"
+                app:drawableStartCompat="@drawable/baseline_class_24"
+                app:drawableTint="@color/darkBlue"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <!-- Строка имени преподавателя -->
+            <TextView
+                android:id="@+id/tvLessonTeacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/settings_profile_value_padding_horizontal"
+                android:fontFamily="@font/inter"
+                android:text="Иванов Иван Иванович"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/text_normal"
+                app:drawableStartCompat="@drawable/baseline_person_24"
+                app:drawableTint="@color/darkBlue"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <!-- Строка места проведения занятия (АКЦЕНТНЫЙ ЦВЕТ) -->
+            <TextView
+                android:id="@+id/tvLessonPlace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/settings_profile_value_padding_horizontal"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Ауд. 420, Корпус Б"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_normal"
+                app:drawableStartCompat="@drawable/baseline_location_on_24"
+                app:drawableTint="@color/text_secondary"
+                android:layout_marginBottom="@dimen/margin_default" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:layout_marginBottom="@dimen/margin_small">
+
+                <!-- Строка "до окончания" -->
+                <TextView
+                    android:id="@+id/tvUntilEndLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="До окончания:"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="@dimen/text_large"
+                    android:layout_gravity="center_vertical" />
+
+                <!-- Поле серого цвета с таймером -->
+                <TextView
+                    android:id="@+id/tvCountdown"
+                    android:layout_weight="0.2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey"
+                    android:paddingHorizontal="@dimen/margin_default"
+                    android:paddingVertical="@dimen/margin_small"
+                    android:text="01:15:32"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="@dimen/text_large"
+                    android:fontFamily="@font/inter_bold"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
     <!-- Плашка "Вы отсканированы!" -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardScanned"
@@ -59,7 +193,7 @@
         app:cardBackgroundColor="@color/card_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivScan">
+        app:layout_constraintTop_toBottomOf="@+id/cardLesson">
 
         <TextView
             android:id="@+id/tvScannedMessage"
