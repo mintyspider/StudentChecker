@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardLessonContent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@drawable/bg_stat_card">
+
+    <!-- Название предмета -->
+    <TextView
+        android:id="@+id/tvLessonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_extrabold"
+        android:text="Программирование на Android"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/text_large"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Разделитель -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Строка: время и тип -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:id="@+id/tvLessonTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="4dp"
+            android:fontFamily="@font/inter"
+            android:text="10:30-12:05"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/text_medium"
+            app:drawableStartCompat="@drawable/baseline_schedule_24"
+            app:drawableTint="@color/darkBlue" />
+
+        <TextView
+            android:id="@+id/tvLessonType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:drawablePadding="4dp"
+            android:fontFamily="@font/inter"
+            android:text="Лекция"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/text_medium"
+            app:drawableStartCompat="@drawable/baseline_class_24"
+            app:drawableTint="@color/darkBlue" />
+
+    </LinearLayout>
+
+    <!-- Строка: преподаватель и аудитория -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvLessonTeacher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="4dp"
+            android:fontFamily="@font/inter"
+            android:text="Иванов И.И."
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/text_medium"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:drawableStartCompat="@drawable/baseline_person_24"
+            app:drawableTint="@color/darkBlue" />
+
+        <TextView
+            android:id="@+id/tvLessonPlace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:drawablePadding="4dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="341 ГК"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/text_medium"
+            app:drawableStartCompat="@drawable/baseline_location_on_24"
+            app:drawableTint="@color/darkBlue" />
+
+    </LinearLayout>
+
+    <!-- Таймер -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/divider"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvUntilEndLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_semibold"
+            android:text="До окончания:"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/text_medium" />
+
+        <TextView
+            android:id="@+id/tvCountdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:text="01:15:32"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/text_medium" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -15,6 +15,6 @@
   -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="@dimen/icon_small" android:tint="@color/darkBlue" android:viewportHeight="24" android:viewportWidth="24" android:width="@dimen/icon_small">
       
-    <path android:fillColor="@android:color/white" android:pathData="M12,2C8.13,2 5,5.13 5,9c0,5.25 7,13 7,13s7,-7.75 7,-13c0,-3.87 -3.13,-7 -7,-7zM12,11.5c-1.38,0 -2.5,-1.12 -2.5,-2.5s1.12,-2.5 2.5,-2.5 2.5,1.12 2.5,2.5 -1.12,2.5 -2.5,2.5z"/>
+    <path android:fillColor="@android:color/white" android:pathData="M14,8c0,-2.21 -1.79,-4 -4,-4S6,5.79 6,8s1.79,4 4,4S14,10.21 14,8zM17,10v2h6v-2H17zM2,18v2h16v-2c0,-2.66 -5.33,-4 -8,-4S2,15.34 2,18z"/>
     
 </vector>

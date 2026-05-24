@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableAttendance"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_edit_text"
+    android:orientation="horizontal"
+    android:padding="@dimen/statistics_content_padding">
+
+    <TextView
+        android:id="@+id/tvScannedMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_default"
+        android:layout_marginVertical="@dimen/margin_small"
+        android:drawableLeft="@drawable/baseline_wifi_24"
+        android:drawablePadding="@dimen/settings_profile_value_padding_horizontal"
+        android:fontFamily="@font/inter_semibold"
+        android:gravity="center_vertical"
+        android:padding="@dimen/card_padding"
+        android:text="Нет соединения с сервером"
+        android:textColor="@color/darkBlue"
+        android:textSize="@dimen/text_normal"/>
+
+</LinearLayout>

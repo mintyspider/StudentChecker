@@ -19,80 +19,79 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Заголовок -->
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/finished_title_margin_top"
-        android:fontFamily="@font/inter"
-        android:text="@string/finished_title"
-        android:textAlignment="center"
-        android:textColor="@color/darkBlue"
-        android:textSize="@dimen/finished_title_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Иконка сканирования -->
-    <ImageView
-        android:id="@+id/ivScan"
-        android:layout_width="@dimen/image_medium"
-        android:layout_height="@dimen/image_medium"
-        android:contentDescription="@string/finished_title"
-        android:layout_marginTop="@dimen/finished_image_margin_top"
-        android:src="@drawable/scan"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
-
-    <!-- Нижняя панель с кнопками -->
+    <!-- Панель с кнопками -->
     <LinearLayout
-        android:id="@+id/buttonsPanel"
+        android:id="@+id/header_Scanning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/finished_bottom_panel_margin_bottom"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/margin_top_default"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Кнопка закрыть -->
+        <TextView
+            android:id="@+id/Login_H1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_2xlarge"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/finished_title"
+            android:textAlignment="textStart"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/scanning_title_text_size" />
+
         <ImageButton
-            android:id="@+id/btnCloseScanning"
-            android:contentDescription="@string/finished_close_button_desc"
+            android:id="@+id/btnStatistics"
             android:layout_width="@dimen/icon_large"
             android:layout_height="@dimen/icon_large"
             android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_2xlarge"
             android:backgroundTint="@color/transparent"
-            android:padding="@dimen/finished_stats_button_padding"
-            android:src="@drawable/baseline_close_24" />
-
-        <!-- Кнопка статистики -->
-        <ImageButton
-            android:id="@+id/btnResultScanning"
-            android:contentDescription="@string/finished_stats_button_desc"
-            android:layout_width="@dimen/icon_2xlarge"
-            android:layout_height="@dimen/icon_2xlarge"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/finished_list_button_margin_horizontal"
-            android:layout_marginEnd="@dimen/finished_list_button_margin_horizontal"
-            android:backgroundTint="@color/transparent"
-            android:padding="@dimen/margin_large"
+            android:contentDescription="@string/scanning_pause_button_desc"
+            android:padding="@dimen/scanning_pause_button_padding"
             android:src="@drawable/baseline_pie_chart_outline_2" />
 
-        <!-- Кнопка удаления -->
-        <ImageButton
-            android:id="@+id/btnDeleteScanning"
-            android:contentDescription="@string/finished_delete_button_desc"
-            android:layout_width="@dimen/icon_large"
-            android:layout_height="@dimen/icon_large"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/transparent"
-            android:padding="@dimen/finished_delete_button_padding"
-            android:src="@drawable/baseline_delete_outline_24" />
-
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:background="@drawable/bg_stat_card"
+        android:drawablePadding="@dimen/settings_profile_value_padding_horizontal"
+        android:fontFamily="@font/inter_semibold"
+        android:padding="@dimen/card_padding"
+        android:text="Нет соединения с сервером"
+        android:textAlignment="center"
+        android:textColor="@color/darkBlue"
+        android:textSize="@dimen/text_normal"
+        app:drawableStartCompat="@drawable/baseline_wifi_24"
+        app:layout_constraintEnd_toEndOf="@+id/header_Scanning"
+        app:layout_constraintStart_toStartOf="@+id/header_Scanning"
+        app:layout_constraintTop_toBottomOf="@id/header_Scanning" />
+
+    <include
+        layout="@layout/table_attendance"
+        android:id="@+id/includeAttendance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMessage" />
+
+    <!-- Список строк (отдельно, под заголовком) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPeople"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/includeAttendance"
+        app:layout_constraintStart_toStartOf="@+id/includeAttendance"
+        app:layout_constraintTop_toBottomOf="@+id/includeAttendance" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

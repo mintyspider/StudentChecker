@@ -5,23 +5,27 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- Основные цвета (все в градациях серого/черного/белого) -->
-    <color name="darkBlue">#FFFFFF</color>           <!-- акцент → белый -->
-    <color name="darkBlue_hint">#808080</color>      <!-- серый -->
+    <color name="darkBlue">#FFFFFF</color>
+    <color name="darkBlue_hint">#808080</color>
     <color name="transparent">#00000000</color>
-    <color name="red">#FFFFFF</color>                <!-- красный → белый -->
-    <color name="grey">#404040</color>               <!-- темно-серый -->
+    <color name="red">#FFFFFF</color>
+    <color name="grey">#404040</color>
 
     <!-- Фоны (продуманная иерархия) -->
-    <color name="background">#121212</color>         <!-- глубокий темно-серый, не чисто черный -->
-    <color name="surface">#1E1E1E</color>            <!-- на тон светлее фона -->
-    <color name="card_background">#2D2D2D</color>    <!-- карточки заметно выделяются -->
+    <color name="background">#121212</color>
+    <color name="surface">#1E1E1E</color>
+    <color name="card_background">#2D2D2D</color>
+    <color name="table_header_background">#CACACA</color>
 
     <!-- Текст -->
-    <color name="text_primary">#F5F7FA</color>       <!-- белый, максимальный контраст -->
-    <color name="text_secondary">#5AA2F5</color>     <!-- светлый серый -->
-    <color name="text_hint">#757575</color>          <!-- средне-серый -->
-    <color name="divider">#404040</color>            <!-- темный разделитель -->
+    <color name="text_primary">#F5F7FA</color>
+    <color name="text_secondary">#5AA2F5</color>
+    <color name="text_hint">#757575</color>
+    <color name="divider">#404040</color>
 
     <!-- Иконки -->
-    <color name="icon_tint">#FFFFFF</color>          <!-- белые иконки -->
+    <color name="icon_tint">#FFFFFF</color>
+    <color name="green">#b0f2b9</color>
+    <color name="light_red">#f08f89</color>
+    <color name="yellow">#FFFFB5</color>
 </resources>

@@ -15,8 +15,8 @@
   -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:tint="@color/darkBlue"
-    android:width="72dp"
-    android:height="72dp"
+    android:width="@dimen/icon_large"
+    android:height="@dimen/icon_large"
     android:viewportWidth="24"
     android:viewportHeight="24">
 

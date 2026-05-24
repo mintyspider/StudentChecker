@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableAttendance"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/card_background"
+    android:orientation="horizontal"
+    android:padding="@dimen/statistics_content_padding">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_weight="2"
+        android:background="@drawable/header_card"
+        android:padding="@dimen/edittext_padding"
+        android:text="ФИО студента"
+        android:textAlignment="center"
+        android:textColor="@color/darkBlue"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_weight="1"
+        android:background="@drawable/header_card"
+        android:padding="@dimen/edittext_padding"
+        android:text="Группа"
+        android:textAlignment="center"
+        android:textColor="@color/darkBlue"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/header_card"
+        android:padding="@dimen/edittext_padding"
+        android:text="Отметка"
+        android:textAlignment="center"
+        android:textColor="@color/darkBlue"
+        android:textStyle="bold" />
+
+</LinearLayout>
